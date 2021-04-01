@@ -1,11 +1,20 @@
 package principal;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Main {
+/*
+* Código-fonte escrito foi baseado no código de Rosicléia Frasson
+* Disponível em: https://www.devmedia.com.br/jtable-utilizando-o-componente-em-interfaces-graficas-swing/28857
+*
+ */
+public class Main extends JFrame{
+
+
+
     static Rubrica habitacao;
     static Rubrica saude;
     static Rubrica transporte;
@@ -99,6 +108,10 @@ public class Main {
 
     final static JTextField jTfSaldoDisponivel = new JTextField(TAMANHO_CAMPO_EDITAVEL);
 
+    private static DefaultTableModel modelo = new DefaultTableModel();
+    private static JTable tabela;
+    private static JScrollPane barraRolagem;
+
     private static void listaDadosTelaGrafica() {
         //		JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("Orçamento familiar");
@@ -113,6 +126,13 @@ public class Main {
         JLabel jLabelReceitas = new JLabel(labelReceitas);
         jTfReceitas.setEditable(false);
         jTfReceitas.setText(String.valueOf(totalReceitas));
+
+        tabela = new JTable(modelo);
+        modelo.addColumn("Rúbrica");
+        modelo.addColumn("Valor");
+        barraRolagem = new JScrollPane(tabela);
+
+
 
         JLabel jLabelReceita0 = new JLabel(mesMarco.getlabelAmigavelRubricaPorIndice(receita, 0));
         jTfReceita0.setText(String.valueOf(mesMarco.getValorRubricaPorIndice(receita, 0)));
@@ -151,6 +171,8 @@ public class Main {
 
         panel.add(jLabelReceitas);
         panel.add(jTfReceitas);
+
+        panel.add(barraRolagem);
 
         panel.add(jLabelReceita0);
         panel.add(jTfReceita0);
