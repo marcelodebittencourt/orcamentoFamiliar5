@@ -50,7 +50,7 @@ public class ListarRubrica extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500, 320);
         setVisible(true);
-        btInserir.addActionListener(new BtInserirListener());
+//        btInserir.addActionListener(new BtInserirListener());
 //        btEditar.addActionListener(new BtEditarListener());
 //        btExcluir.addActionListener(new BtExcluirListener());
     }
@@ -79,13 +79,13 @@ public class ListarRubrica extends JFrame {
             modelo.addRow(new Object[]{"R", mesMarco.despesas.get(i).getNome(), mesMarco.despesas.get(i).getValor()} );
     }
 
-    private class BtInserirListener implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-            InserirContato ic = new InserirContato(modelo);
-            ic.setVisible(true);
-        }
-    }
+//    private class BtInserirListener implements ActionListener {
+//
+//        public void actionPerformed(ActionEvent e) {
+//            InserirContato ic = new InserirContato(modelo);
+//            ic.setVisible(true);
+//        }
+//    }
 
 //    private class BtEditarListener implements ActionListener {
 //
