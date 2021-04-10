@@ -3,6 +3,7 @@ package principal;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.mockito.Mockito;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -34,6 +35,9 @@ public class RubricaTest {
         System.out.println("altera valor");
         r.setValor(14);
         assertThat(r.getValor(), is(14.0));
+//        Rubrica rMocked = Mockito.spy(r);
+//        Mockito.doReturn(true).when(rMocked).save();
+//        assertThat(rMocked.save(), is(true));
     }
 
     double v;

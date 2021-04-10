@@ -35,4 +35,10 @@ public class Rubrica {
         return this.getNome() + ": R$ ";
     }
 
+    public boolean save() {
+        //persistiria no banco de dados
+        System.out.println("Banco de dados ainda não implementado");
+        return false;
+    }
+
 }
