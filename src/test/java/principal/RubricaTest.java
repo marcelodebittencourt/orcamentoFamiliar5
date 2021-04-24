@@ -21,7 +21,7 @@ public class RubricaTest {
     @Test
     void obtemValor() {
         System.out.println("teste obtem valor");
-        assertThat(r.getValor(), is(514.23));
+        assertThat(r.getValor(), is(514.25));
     }
 
     @BeforeEach
